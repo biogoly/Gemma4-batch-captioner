@@ -40,7 +40,7 @@ mtp_assistant = 'C:\Users\YOUR_NAME\LLM\models\Gemma-4-31B-QAT\mtp-gemma-4-31B-i
 
 ### Optional Heretic/abliterated models
 
-Heretic or abliterated Gemma 4 checkpoints can be substituted when uncensored or NSFW descriptions are specifically desired. They are not required for ordinary captioning and are no longer the project default. Use a QAT vision checkpoint based on the same Gemma 4 architecture and keep its projector and MTP assistant matched to the same 12B or 31B size.
+Heretic or abliterated Gemma 4 checkpoints can be substituted when uncensored or NSFW descriptions are specifically desired. Use a QAT vision checkpoint based on the same Gemma 4 architecture and keep its projector and MTP assistant matched to the same 12B or 31B size.
 
 ## Folder layout
 
