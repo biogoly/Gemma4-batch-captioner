@@ -1,0 +1,49 @@
+# Copy this file to server_config.toml and replace the example paths.
+# Single-quoted TOML strings make Windows backslashes painless.
+
+[server]
+llama_cpp_dir = 'C:\Users\YOUR_NAME\LLM\llama-cpp'
+executable = 'llama-server.exe'
+
+# Standard unsloth/gemma-4-12B-it-qat-GGUF profile.
+# See README.md for the quality-first standard 31B profile and optional Heretic
+# substitutions for uncensored/NSFW captioning.
+model = 'C:\Users\YOUR_NAME\LLM\models\Gemma-4-12B-QAT\gemma-4-12B-it-qat-UD-Q4_K_XL.gguf'
+mmproj = 'C:\Users\YOUR_NAME\LLM\models\Gemma-4-12B-QAT\mmproj-BF16.gguf'
+mtp_assistant = 'C:\Users\YOUR_NAME\LLM\models\Gemma-4-12B-QAT\mtp-gemma-4-12B-it.gguf'
+
+host = '127.0.0.1'
+port = 8080
+startup_timeout = 180
+media_path = 'input'
+
+context_size = 8192
+# Gemma 4 vision uses non-causal image attention. Keep ubatch_size at least as
+# large as image_max_tokens or llama.cpp can abort when the first image arrives.
+batch_size = 2048
+ubatch_size = 2048
+gpu_layers = 999
+parallel_slots = 1
+fit = true
+flash_attention = true
+jinja = true
+chat_template_file = 'templates/gemma4_chat_template.jinja'
+reasoning = 'off'
+
+# Gemma 4 supports 70, 140, 280, 560, or 1120 visual tokens per image.
+# 1120 retains fine detail but uses more context, compute, and memory. Lower this
+# to 560 or 280 if your hardware is tight or throughput matters more than detail.
+image_min_tokens = 70
+image_max_tokens = 1120
+
+# Leave tensor_split empty for one GPU. Nathan's dual-GPU setup uses '1,1'.
+split_mode = 'layer'
+tensor_split = ''
+
+# The matching assistant is tested with four drafted tokens. No p-min override is
+# supplied, so llama.cpp uses its own default.
+spec_draft_n_max = 4
+
+# Add any flags required by your particular llama.cpp build as separate items.
+# Example: extra_args = ['--cache-type-k', 'q8_0']
+extra_args = []

@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Machine-specific model and llama.cpp paths
+server_config.toml
+
+# User inputs and generated outputs
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+logs/*
+!logs/.gitkeep
+
+*.zip
+Thumbs.db
+.DS_Store
