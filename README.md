@@ -256,19 +256,6 @@ python -m unittest discover -s tests -v
 
 GitHub Actions runs the same suite on Python 3.11 and 3.12.
 
-## Publishing to GitHub
-
-Generated images, captions, logs, the virtual environment, and your machine-specific `server_config.toml` are excluded by `.gitignore`.
-
-```bash
-git init
-git add .
-git commit -m "Initial Gemma batch captioner"
-git branch -M main
-git remote add origin https://github.com/YOUR_NAME/gemma-batch-captioner.git
-git push -u origin main
-```
-
 ## License
 
 MIT. Model weights remain subject to their own licenses and are not distributed with this project.
