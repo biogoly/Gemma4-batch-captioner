@@ -1,3 +1,6 @@
+<img width="2172" height="724" alt="image" src="https://github.com/user-attachments/assets/92c79764-aa19-496a-bc48-5ab9b55e19d5" />
+
+
 # Gemma Batch Captioner
 
 Turn a folder of images into detailed natural-language reconstruction prompts using a local multimodal model served by `llama-server`.
